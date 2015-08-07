@@ -8,9 +8,9 @@ class String
 
     puts for_string #Did the substring get assigned properly?
 
-    times_found = in_string.scan(/for_string/).count
+    times_found = in_string.scan(for_string).count
 
-    puts in_string.scan(/for_string/) #Did the array of instances get created?
+    puts in_string.scan(for_string) #Did the array of instances get created?
     puts times_found #Did the times_found variable get properly assigned?
 
     times_found > 0
