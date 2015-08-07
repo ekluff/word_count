@@ -10,8 +10,9 @@ This web application contains two view that are presented to the user: a home pa
 
 ## Setup
 
-*This app has been deployed to Heroku. It can be accessed by visiting the URL https://secure-crag-4192.herokuapp.com/ .
-*A repository containing this app can be found at https://github.com/ekluff/word_count.git .
+This app has been deployed to Heroku. It can be accessed by visiting the URL https://secure-crag-4192.herokuapp.com/ .
+
+A repository containing this app can be found at https://github.com/ekluff/word_count.git .
 
 ## Technologies Used
 
