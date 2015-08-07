@@ -13,16 +13,14 @@ get ('/result') do
   in_string = params.fetch('sentence')
   times_found = for_string.word_count(in_string)
 
-  @result_phrase = if in_string == ""
+  @result_phrase = if in_string == "" && times_found == ""
+    "Uh oh! It looks like you left the form blank. Please check your inputs."
+  elsif in_string == ""
     "Uh oh! It looks like you didn't give us a sentence to search in. Please check your inputs."
   else
     case times_found
     when ""
-      if in_string == ""
-        "Uh oh! It looks like you left the form blank. Please check your inputs."
-      else
         "Uh oh! It looks like you didn't give us a word to search for. Please check your inputs."
-      end
     when 0
       "We could not find your word! Please check your inputs."
     when 1
