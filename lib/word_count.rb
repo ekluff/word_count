@@ -5,7 +5,8 @@ class String
     for_string = self
     times_found = in_string.scan(for_string).count
 
-    times_found > 0
+    # times_found > 0
+    # Will integrate this into an if statement later
 
   end
 
