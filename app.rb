@@ -16,6 +16,11 @@ get ('/result') do
   else
     false
   end
+  whole_word = if params.fetch('whole-word') == "true"
+    true
+  else
+    false
+  end
   times_found = for_string.word_count(in_string,match_case)
 
   @result_phrase = if in_string == "" && times_found == ""
