@@ -15,4 +15,8 @@ describe('String#word_count') do
     expect("taco".word_count("Tacocat is a cat that likes tacos.",true)).to(eq(1))
   end
 
+  it('searches for whole words only') do
+    expect("taco".word_count("Tacocat is a cat that likes tacos.",,true)).to(eq(0))
+  end
+
 end
