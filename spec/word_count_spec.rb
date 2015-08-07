@@ -15,4 +15,8 @@ describe('String#word_count') do
     expect("burrito".word_count("tacocat is a cat that likes tacos")).to(eq("We could not find your word in that sentence! Please check your inputs."))
   end
 
+  it('accounts for mixed case strings') do
+    expect("TaCo".word_count("Tacocat is a cat that likes tacos.")).to(eq(2))
+  end
+
 end
