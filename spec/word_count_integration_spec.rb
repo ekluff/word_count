@@ -44,4 +44,9 @@ describe('the word count path', {:type => :feature}) do
     expect(page).to have_content("Uh oh! It looks like you didn't give us a sentence to search in. Please check your inputs.")
   end
 
+  it('returns an error message when the user submits a blank form') do
+    visit('/')
+    click_button('Search!')
+    expect(page).to have_content("Uh oh! It looks like you left the form blank. Please check your inputs.")
+
 end
