@@ -11,7 +11,12 @@ get ('/result') do
 
   for_string = params.fetch('word')
   in_string = params.fetch('sentence')
-  times_found = for_string.word_count(in_string)
+  match_case = if params.fetch('match-case') == "true"
+    true
+  else
+    false
+  end
+  times_found = for_string.word_count(in_string,match_case)
 
   @result_phrase = if in_string == "" && times_found == ""
     "Uh oh! It looks like you left the form blank. Please check your inputs."

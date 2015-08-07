@@ -54,6 +54,7 @@ describe('the word count path', {:type => :feature}) do
     visit('/')
     fill_in('word', :with => 'Taco')
     fill_in('sentence', :with => 'Tacocat is a cat that likes tacos.')
+    select('Yes', :from => 'match-case')
     click_button('Search!')
     expect(page).to have_content("We found your word 1 time.")
   end
