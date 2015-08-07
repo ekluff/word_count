@@ -18,7 +18,11 @@ get ('/result') do
   else
     case times_found
     when ""
-      "Uh oh! It looks like you didn't give us a word to search for. Please check your inputs."
+      if in_string == ""
+        "Uh oh! It looks like you didn't give us a sentence to search in. Please check your inputs."
+      else
+        "Uh oh! It looks like you didn't give us a word to search for. Please check your inputs."
+      end
     when 0
       "We could not find your word! Please check your inputs."
     when 1
