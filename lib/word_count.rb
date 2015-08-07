@@ -11,7 +11,11 @@ class String
     when ''
       times_found = ''
     else
-      times_found = in_string.scan(for_string).count
+      if whole_word
+        times_found = in_string.split(/\W+/).count(for_string)
+      else
+        times_found = in_string.scan(for_string).count
+      end
     end
 
   end
