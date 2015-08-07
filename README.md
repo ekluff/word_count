@@ -6,7 +6,7 @@
 
 ## Description
 
-This web application contains two view that are presented to the user: a home page (index.erb) and a results page (result.erb). The home page is a form containing two text input fields which direct the user to enter a sentence and a word, respectively. Once submitted, the application searches the sentence for the word and directs the user to the results page that displays one of four possible messages stating that 1) the word was not found, 2) the word was found one time, 3) the word was found more than once (in which case it specifies the number of times), or 4) the user did not input a word.
+This web application contains two view that are presented to the user: a home page (index.erb) and a results page (result.erb). The home page is a form containing two text input fields which direct the user to enter a sentence and a word, respectively. Once submitted, the application searches the sentence for the word and directs the user to the results page that displays one of four possible messages stating that 1) the word was not found, 2) the word was found one time, 3) the word was found more than once (in which case it specifies the number of times), 4) the user did not input a word, or 5) that the user did not input a sentence.
 
 ## Setup
 
@@ -20,7 +20,7 @@ The logic for this application is written in Ruby, and runs in Sinatra. The appl
 
   count_how_many_times_this_word_occurs.word_count(within_this_sentence)
 
-The application uses params.fetch in file app.rb to retrieve the user input. File app.rb contains logic that determines the instance variable @result_phrase, the definition of which is determined using case switching. There are four possible message types, as described above. The value of @result_phrase is subsequently called on page result.erb.
+The application uses params.fetch in file app.rb to retrieve the user input. File app.rb contains logic that determines the instance variable @result_phrase, the definition of which is determined using case switching. There are five possible message types, as described above. The value of @result_phrase is subsequently called on page result.erb.
 
 ### Legal
 
