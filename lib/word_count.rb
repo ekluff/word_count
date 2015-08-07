@@ -7,19 +7,6 @@ class String
     in_string.downcase!() unless match_case
     for_string.downcase!() unless match_case
 
-    # in_string = if match_case
-    #   in_string
-    #
-    # else
-    #   in_string.downcase
-    # end
-    #
-    # for_string = if match_case
-    #   self
-    # else
-    #   self.downcase
-    # end
-
     case for_string
     when ''
       times_found = ''
