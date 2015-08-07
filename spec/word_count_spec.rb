@@ -7,4 +7,8 @@ describe('String#word_count') do
     expect("taco".word_count("tacocat is a cat that likes tacos")).to(eq(true))
   end
 
+  it('searches a string for a substring and returns the number of occurences') do
+    expect("taco".word_count("tacocat is a cat that likes tacos")).to(eq(2))
+  end
+
 end
