@@ -2,7 +2,7 @@ class String
 
   define_method(:word_count) do |in_string|
 
-    unless self = ""
+    unless self == ""
       for_string = self.downcase
       times_found = in_string.downcase.scan(for_string).count
     end
