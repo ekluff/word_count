@@ -21,7 +21,7 @@ get ('/result') do
   else
     false
   end
-  times_found = for_string.word_count(in_string,match_case)
+  times_found = for_string.word_count(in_string,match_case,whole_word)
 
   @result_phrase = if in_string == "" && times_found == ""
     "Uh oh! It looks like you left the form blank. Please check your inputs."
