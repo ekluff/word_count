@@ -11,7 +11,7 @@ describe('the word count path', {:type => :feature}) do
     fill_in('word', :with => 'TaCo')
     fill_in('sentence', :with => 'Tacocat is a cat that likes tacos.')
     click_button('Search!')
-    expect(page).to have_content("Your word was found 2 times.")
+    expect(page).to have_content("We found your word 2 times.")
   end
 
 end
