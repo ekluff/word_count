@@ -17,9 +17,9 @@ get ('/result') do
   if times_found == 0
     "We could not find your word! Please check your inputs."
   elsif times_found == 1
-    "We found your word ".concat(times_found).concat(" time.")
+    "We found your word ".concat(times_found.to_s).concat(" time.")
   else
-    "We found your word ".concat(times_found).concat(" times.")
+    "We found your word ".concat(times_found.to_s).concat(" times.")
   end
 
   erb(:result)
