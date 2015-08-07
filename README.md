@@ -16,11 +16,11 @@ A repository containing this app can be found at https://github.com/ekluff/word_
 
 ## Technologies Used
 
-The logic for this application is written in Ruby, and runs in Sinatra. The application contains a method named "word_count" declared on the String class that employs case switching to return, as a Fixnum, the number of instances of a substring (i.e., the word) occuring within a string (i.e., the sentence) or, if the receiver is a null set, a null set. Word_count accepts the substring as receiver and the string as parameter, as below:
+The logic for this application is written in Ruby, and runs in Sinatra. The application contains a method named "word_count" declared on the String class that employs case switching to return, as a Fixnum, the number of instances of a substring (i.e., the word) occurring within a string (i.e., the sentence) or, if the receiver is a null set, a null set. Word_count accepts the substring as receiver and the string an argument, as below:
 
   count_how_many_times_this_word_occurs.word_count(within_this_sentence)
 
-The application uses params.fetch in file app.rb to retrieve the user input. File app.rb contains the instance variable @result_phrase, the definition of which is determined using case switching. There are four possible message types, as described above.
+The application uses params.fetch in file app.rb to retrieve the user input. File app.rb contains logic that determines the instance variable @result_phrase, the definition of which is determined using case switching. There are four possible message types, as described above. The value of @result_phrase is subsequently called on page result.erb.
 
 ### Legal
 
