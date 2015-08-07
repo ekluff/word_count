@@ -5,8 +5,11 @@ class String
     for_string = self
     times_found = in_string.scan(for_string).count
 
-    # times_found > 0
-    # Will integrate this into an if statement later
+    if times_found > 0
+      times_found
+    else
+      "We could not find your word in that sentence! Please check your inputs."
+    end
 
   end
 
