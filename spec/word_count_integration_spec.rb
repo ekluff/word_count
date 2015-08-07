@@ -50,4 +50,12 @@ describe('the word count path', {:type => :feature}) do
     expect(page).to have_content("Uh oh! It looks like you left the form blank. Please check your inputs.")
   end
 
+  it('allows the user to search only case-matching words') do
+    visit('/')
+    fill_in('word', :with => 'Taco')
+    fill_in('sentence', :with => 'Tacocat is a cat that likes tacos.')
+    click_button('Search!')
+    expect(page).to have_content("We found your word 1 time.")
+  end
+
 end
