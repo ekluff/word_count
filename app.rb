@@ -13,12 +13,12 @@ get ('/result') do
   in_string = params.fetch('sentence')
   times_found = for_string.word_count(in_string)
 
-  @result_phrase =
-  if for_string == ''
+  @result_phrase = case times_found
+  when ""
     "Uh oh! It looks like you didn't give us a word to search for. Please check your inputs."
-  elsif times_found == 0
+  when 0
     "We could not find your word! Please check your inputs."
-  elsif times_found == 1
+  when 1
     "We found your word ".concat(times_found.to_s).concat(" time.")
   else
     "We found your word ".concat(times_found.to_s).concat(" times.")
