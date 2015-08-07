@@ -11,4 +11,8 @@ describe('String#word_count') do
     expect("TaCo".word_count("Tacocat is a cat that likes tacos.")).to(eq(2))
   end
 
+  it('searches only for case matching words') do
+    expect("taco".word_count("Tacocat is a cat that likes tacos.",true)).to(eq(1))
+  end
+
 end

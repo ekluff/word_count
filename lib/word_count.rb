@@ -1,9 +1,18 @@
 class String
 
-  define_method(:word_count) do |in_string|
+  define_method(:word_count) do |in_string, match_case=false, whole_word=false|
 
-    in_string = in_string.downcase
-    for_string = self.downcase
+    in_string = if match_case
+      in_string
+    else
+      in_string.downcase
+    end
+
+    for_string = if match_case
+      self
+    else
+      self.downcase
+    end
 
     case for_string
     when ''
