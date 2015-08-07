@@ -6,7 +6,7 @@
 
 ## Description
 
-This web application contains two view that are presented to the user: a home page and a results page. The home page is a form containing two text input fields which direct the user to enter a sentence and a word, respectively. Once submitted, the application searches the sentence for the word and directs the user to the results page that displays one of three possible messages stating that 1) the word was not found, 2) the word was found one time, or 3) the word was found more than once (in which case it specifies the number of times).
+This web application contains two view that are presented to the user: a home page (index.erb) and a results page (result.erb). The home page is a form containing two text input fields which direct the user to enter a sentence and a word, respectively. Once submitted, the application searches the sentence for the word and directs the user to the results page that displays one of four possible messages stating that 1) the word was not found, 2) the word was found one time, 3) the word was found more than once (in which case it specifies the number of times), or 4) the user did not input a word.
 
 ## Setup
 
@@ -15,15 +15,13 @@ This web application contains two view that are presented to the user: a home pa
 
 ## Technologies Used
 
-The logic for this application is written in Ruby, and runs in Sinatra. The application contains a method named "word_count" that returns, as a Fixnum, the number of instances of a substring (i.e., the word) occuring within a string (i.e., the sentence). Word_count accepts the substring as an object and the string as a parameter, as below:
+The logic for this application is written in Ruby, and runs in Sinatra. The application contains a method named "word_count" declared on the String class that employs case switching to return, as a Fixnum, the number of instances of a substring (i.e., the word) occuring within a string (i.e., the sentence) or, if the receiver is a null set, a null set. Word_count accepts the substring as receiver and the string as parameter, as below:
 
   count_how_many_times_this_word_occurs.word_count(within_this_sentence)
 
-The application uses params.fetch in file app.rb to retrieve the user-input sentence and word from the form on the home page, and applies the word and sentence as receiver and parameter of method word_count, respectively. File app.rb contains the instance variable @result_phrase defined as a statement if/elsif/else that tests if the method word_count returned Fixnum equals 0 or 1 and returns the gramatically appropriate phrase then displayed on the result page to which the user is directed.
+The application uses params.fetch in file app.rb to retrieve the user input. File app.rb contains the instance variable @result_phrase, the definition of which is determined using case switching. There are four possible message types, as described above.
 
 ### Legal
-
-*{This is boilerplate legal language. Read through it, and if you like it, use it. There are other license agreements online, but you can generally copy and paste this.}*
 
 Copyright (c) 2015 Evan Clough.
 
