@@ -9,7 +9,18 @@ end
 
 get ('/result') do
 
-  #code
+  for_string = params.fetch('word')
+  in_string = params.fetch('sentence')
+  times_found = for_string.word_count(in_string).to_s
 
+  @result_phrase =
+  if times_found = 0
+    "We could not find your word! Please check your inputs."
+  elsif times_found = 1
+    "We found your word ".concat(times_found)." time."
+  else
+    "We found your word ".concat(times_found)." times."
+  end
+      
   erb(:result)
 end
