@@ -11,7 +11,7 @@ get ('/result') do
 
   for_string = params.fetch('word')
   in_string = params.fetch('sentence')
-  times_found = for_string.word_count(in_string).to_s
+  times_found = for_string.word_count(in_string)
 
   @result_phrase =
   if times_found == 0

@@ -6,7 +6,7 @@ set(:show_exceptions, false)
 
 describe('the word count path', {:type => :feature}) do
 
-  it('searches for a user-input substring in a user-input string') do
+  it('returns the number of times a mixed-case substring is found in a non-conforming case string containing that substring multiple times') do
     visit('/')
     fill_in('word', :with => 'TaCo')
     fill_in('sentence', :with => 'Tacocat is a cat that likes tacos.')
@@ -20,6 +20,14 @@ describe('the word count path', {:type => :feature}) do
     fill_in('sentence', :with => 'Tacocat is a cat that likes tacos.')
     click_button('Search!')
     expect(page).to have_content("We could not find your word! Please check your inputs.")
+  end
+
+  it('returns a phrase using the gramatically correct singular/plural when a substring occurs only once in a string') do
+    visit('/')
+    fill_in('word', :with => 'cat')
+    fill_in('sentence', :with => 'Tacocat is a cat that likes tacos.')
+    click_button('Search!')
+    expect(page).to have_content("We found your word 1 time.")
   end
 
 end
