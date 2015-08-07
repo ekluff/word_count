@@ -24,7 +24,7 @@ describe('the word count path', {:type => :feature}) do
 
   it('returns a phrase using the gramatically correct singular/plural when a substring occurs only once in a string') do
     visit('/')
-    fill_in('word', :with => 'cat')
+    fill_in('word', :with => 'likes')
     fill_in('sentence', :with => 'Tacocat is a cat that likes tacos.')
     click_button('Search!')
     expect(page).to have_content("We found your word 1 time.")
