@@ -14,7 +14,9 @@ get ('/result') do
   times_found = for_string.word_count(in_string)
 
   @result_phrase =
-  if times_found == 0
+  if for_string == ''
+    "Uh oh! It looks like you didn't give us a word to search for. Please check your inputs."
+  elsif times_found == 0
     "We could not find your word! Please check your inputs."
   elsif times_found == 1
     "We found your word ".concat(times_found.to_s).concat(" time.")
